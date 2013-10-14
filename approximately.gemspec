@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'approximately/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'Approximately'
+  spec.name          = 'approximately'
   spec.version       = Approximately::VERSION
   spec.authors       = ['Derek Prior']
   spec.email         = ['derekprior@gmail.com']
