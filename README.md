@@ -4,12 +4,14 @@ scan to count the exact number of rows. Approximately uses metadata stored
 by PostgreSQL to return an approximate count of the rows without the full
 table scan.
 
-The number will be correct as of the last `VACUUM` or `ANALYZE` on the table.
-This makes it appropriate for any statistics that should be updated regularly
-but do not necessarily need to be live. For more on row estimation, see
-[the Postgres documentation][1].
+The number will be correct immediately following a `VACUUM` or `ANALYZE` on
+the table and will not be updated until the next `VACUUM` or `ANALYZE`. This
+makes it most appropriate for tables that are subject to [`autovacuum`] on a
+regular basis. See the Postgres documentation on [row estimation] and
+[autovacuum][2] for more.
 
 [1]: http://www.postgresql.org/docs/9.2/static/row-estimation-examples.html
+[2]: http://www.postgresql.org/docs/9.2/static/routine-vacuuming.html#AUTOVACUUM
 
 ## Installation
 
